@@ -39,7 +39,6 @@ body{
 }
 
 .quote-author{
-	/*width: 20%;*/
 	font-size: 1em;
 	font-family: 'Open Sans', sans-serif;
 	color: #FAFAFA;
@@ -62,4 +61,21 @@ body{
 
 .card {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 1px 1px rgba(0, 0, 0, 0.23);
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  .sub-container{
+  	width: 100%;
+  	background: none;
+  }
+
+  .quote-author::before {
+  	content: none;
+  }
+
+  .card {
+  	box-shadow: none;
+  }
+  
 }
