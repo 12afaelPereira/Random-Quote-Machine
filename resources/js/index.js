@@ -4,6 +4,7 @@ const button = document.getElementsByClassName("quote-button");
 button[0].addEventListener('click', quoteRequest);
 
 function quoteRequest(event){
+	button[0].innerHTML = "Sending...";
 
 	const ajax = new XMLHttpRequest();
 	ajax.withCredentials = true;
@@ -22,8 +23,8 @@ function quoteRequest(event){
 	ajax.setRequestHeader("x-rapidapi-key", "mk2PX13lDQmshzxOUSQKML2aBkgvp1F3MaljsnZeRnBSUVNRpl");	
 
 	ajax.send(null);
-
 }
+
 
 function renderResponse(response){
 	const text = document.getElementsByClassName("quote-text");
@@ -31,4 +32,5 @@ function renderResponse(response){
 
 	text[0].innerHTML = response.quote;
 	author[0].innerHTML = response.author;
+	button[0].innerHTML = "New Quote";
 }
